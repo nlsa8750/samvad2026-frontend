@@ -392,6 +392,42 @@ h1, h2, h3, .event-title, .section-title, .guest-name {
 }
 .committee-member:hover { border-color: #f5c842; color: #f5c842; }
 
+/* ── Map ── */
+.map-section { padding: 20px 0; }
+.map-wrapper {
+  position: relative;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(90, 53, 0, 0.8);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.map-wrapper:hover {
+  border-color: #f5c842;
+  box-shadow: 0 8px 28px rgba(245, 200, 66, 0.15);
+}
+.map-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(26,10,0,0.85), transparent);
+  padding: 20px 20px 16px;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.map-wrapper:hover .map-overlay { opacity: 1; }
+.map-overlay span {
+  background: #f5c842;
+  color: #1a0a00;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
 /* ── Footer ── */
 .footer {
   text-align: center;

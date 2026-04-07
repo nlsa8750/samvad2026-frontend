@@ -198,6 +198,32 @@ export default function HomePage() {
         <Divider />
       </FadeSection>
 
+      {/* Venue Map */}
+      <FadeSection className="map-section">
+        <Divider />
+        <h2 className="section-title">Venue Location</h2>
+        <p className="org-name">CSWRI, Avikanagar, Malpura (District Tonk)</p>
+        <div
+          className="map-wrapper"
+          onClick={() => window.open('https://maps.app.goo.gl/T1yuJzQYskahprk5A', '_blank')}
+          title="Click to open in Google Maps"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d894.1356440912687!2d75.4187532!3d26.3089249!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396e98f3339a0325%3A0xfdfe0a5dcb68ddb4!2sCentral%20Sheep%20and%20Wool%20Research%20Institute%20Avikanagar!5e0!3m2!1sen!2sin!4v1775563235143!5m2!1sen!2sin"
+            width="100%"
+            height="400"
+            style={{ border: 0, display: 'block', borderRadius: '12px' }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="CSWRI Avikanagar Malpura"
+          />
+          <div className="map-overlay">
+            <span>📍 Open in Google Maps</span>
+          </div>
+        </div>
+      </FadeSection>
+
       {/* Footer */}
       <footer className="footer">
         <p>Organized by <strong>Malpura News Portal Association</strong></p>
