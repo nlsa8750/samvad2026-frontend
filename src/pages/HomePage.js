@@ -87,14 +87,7 @@ function Divider() {
 
 export default function HomePage() {
   const countdown = useCountdown(EVENT_DATE);
-  const [regCount, setRegCount] = useState(null);
 
-  useEffect(() => {
-    fetch(`${API_URL}/api/journalists/count`)
-      .then(r => r.json())
-      .then(d => setRegCount(d.total))
-      .catch(() => {});
-  }, []);
 
   return (
     <div className="page-wrapper">
@@ -128,12 +121,6 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-
-          {regCount !== null && (
-            <div className="reg-counter">
-              🎙 <strong>{regCount}</strong> journalists registered
-            </div>
-          )}
 
           <button className="register-btn" onClick={() => window.open(FORM_URL, '_blank')}>Register Now</button>
           <p className="helpline">Helpline: 9024209393</p>
