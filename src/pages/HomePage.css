@@ -4,56 +4,76 @@
   padding: 0;
 }
 
-body {
+html, body {
+  height: 100%;
   font-family: 'Segoe UI', sans-serif;
   background: #1a0a00;
   color: #fff;
 }
 
 .home-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 24px 16px;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 24px 32px;
+}
+
+.event-poster {
+  flex: 0 0 48%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .poster-img {
+  max-height: calc(100vh - 48px);
   width: 100%;
+  object-fit: contain;
   border-radius: 12px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  display: block;
 }
 
 .event-details {
-  margin-top: 32px;
+  flex: 0 0 44%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  justify-content: center;
   text-align: center;
+  overflow-y: auto;
 }
 
 .event-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #f5c842;
+  line-height: 1.2;
 }
 
 .event-tagline {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: #e0b060;
-  margin-top: 6px;
 }
 
 .info-card {
   background: #2e1500;
   border: 1px solid #f5c842;
   border-radius: 10px;
-  padding: 20px;
-  margin: 24px auto;
-  max-width: 480px;
+  padding: 14px 18px;
   text-align: left;
 }
 
 .info-row {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 8px 0;
-  font-size: 1rem;
+  gap: 10px;
+  padding: 7px 0;
+  font-size: 0.9rem;
   border-bottom: 1px solid #3d2000;
 }
 
@@ -62,22 +82,21 @@ body {
 }
 
 .info-icon {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
+  flex-shrink: 0;
 }
 
 .highlights {
   background: #2e1500;
   border-radius: 10px;
-  padding: 20px 24px;
-  margin: 0 auto 28px;
-  max-width: 600px;
+  padding: 14px 18px;
   text-align: left;
 }
 
 .highlights h2 {
   color: #f5c842;
-  font-size: 1.2rem;
-  margin-bottom: 14px;
+  font-size: 1rem;
+  margin-bottom: 10px;
   text-align: center;
 }
 
@@ -87,10 +106,11 @@ body {
 }
 
 .highlights ul li {
-  padding: 7px 0;
+  padding: 6px 0;
   border-bottom: 1px solid #3d2000;
-  font-size: 0.95rem;
+  font-size: 0.83rem;
   color: #f0d090;
+  line-height: 1.4;
 }
 
 .highlights ul li::before {
@@ -106,12 +126,13 @@ body {
   background: #f5c842;
   color: #1a0a00;
   border: none;
-  padding: 14px 48px;
-  font-size: 1.1rem;
+  padding: 12px;
+  font-size: 1rem;
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.2s;
+  width: 100%;
 }
 
 .register-btn:hover {
@@ -119,7 +140,58 @@ body {
 }
 
 .helpline {
-  margin-top: 16px;
   color: #e0b060;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .home-container {
+    padding: 16px 20px;
+    gap: 16px;
+  }
+
+  .event-title {
+    font-size: 1.6rem;
+  }
+
+  .highlights ul li {
+    font-size: 0.78rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    padding: 16px;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .event-poster {
+    flex: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .poster-img {
+    max-height: none;
+    width: 100%;
+  }
+
+  .event-details {
+    flex: none;
+    width: 100%;
+    height: auto;
+    overflow-y: visible;
+    justify-content: flex-start;
+  }
+
+  .event-title {
+    font-size: 1.7rem;
+  }
 }
