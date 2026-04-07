@@ -3,7 +3,6 @@ import './HomePage.css';
 
 const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfveBsZNmRUuyXXnTrqKB2Y2PwjWVEhvPg6sF9MFZhp2rlw2Q/viewform?usp=header';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
 const EVENT_DATE = new Date('2026-04-09T11:30:00+05:30');
 
 const guests = [
