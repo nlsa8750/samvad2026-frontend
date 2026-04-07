@@ -8,7 +8,7 @@ function HomePage() {
     <div className="home-container">
       <div className="event-poster">
         <img
-          src="/samvad-poster.jpg"
+          src="/samvad-poster.jpeg"
           alt="Samvad 2026 Event Poster"
           className="poster-img"
         />
